@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TrendForge — a futuristic hub for AI, tech, gaming, creator trends and the internet's hottest ideas.">
+<title>TrendForge — What's Trending Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070b;--panel:#101017;--panel2:#151520;--text:#f6f6fb;--muted:#9b9baa;--line:#242432;--a:#8b5cf6;--b:#22d3ee;--c:#ec4899;--good:#34d399;--shadow:0 20px 70px rgba(0,0,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 15% 0%,rgba(139,92,246,.18),transparent 30%),radial-gradient(circle at 85% 10%,rgba(34,211,238,.13),transparent 28%),var(--bg);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:rgba(7,7,11,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 22px "Space Grotesk";letter-spacing:-.8px}.logo span{color:var(--b)}
+.links{display:flex;gap:24px;color:#c8c8d2;font-size:14px}.links a:hover{color:white}
+.actions{display:flex;gap:9px}.btn{border:1px solid var(--line);background:#11111a;color:white;padding:10px 14px;border-radius:12px;cursor:pointer}.btn.primary{border:0;background:linear-gradient(135deg,var(--a),var(--c));font-weight:700}.btn:hover{transform:translateY(-1px)}
+.hero{padding:90px 0 45px;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #342c51;background:#151126;color:#cfc4ff;border-radius:999px;padding:7px 11px;font-size:12px;margin-bottom:20px}.dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 15px var(--good)}
+h1{font:700 clamp(48px,7vw,88px)/.96 "Space Grotesk";letter-spacing:-4px;max-width:800px}h1 .grad{background:linear-gradient(90deg,#fff,var(--b),#b88cff,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:650px;margin:25px 0}.heroBtns{display:flex;gap:12px;flex-wrap:wrap}
+.heroCard{background:linear-gradient(145deg,rgba(139,92,246,.16),rgba(34,211,238,.06));border:1px solid var(--line);border-radius:25px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}.heroCard:before{content:"";position:absolute;width:180px;height:180px;background:var(--a);filter:blur(80px);opacity:.25;right:-70px;top:-70px}
+.miniTop{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.score{font:700 56px "Space Grotesk";margin:24px 0 5px}.trend{color:var(--good);font-weight:700}.bars{display:flex;align-items:end;height:100px;gap:7px}.bars i{display:block;flex:1;border-radius:7px 7px 2px 2px;background:linear-gradient(var(--b),var(--a));opacity:.8}.bars i:nth-child(1){height:35%}.bars i:nth-child(2){height:48%}.bars i:nth-child(3){height:42%}.bars i:nth-child(4){height:63%}.bars i:nth-child(5){height:57%}.bars i:nth-child(6){height:78%}.bars i:nth-child(7){height:94%}
+.section{padding:45px 0}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.eyebrow{text-transform:uppercase;color:var(--b);font-size:11px;font-weight:800;letter-spacing:1.7px}.section h2{font:700 34px "Space Grotesk";letter-spacing:-1px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:rgba(16,16,23,.82);border:1px solid var(--line);border-radius:19px;padding:20px;transition:.2s;position:relative;overflow:hidden}.card:hover{transform:translateY(-4px);border-color:#3b3b4e;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.tag{display:inline-block;font-size:11px;color:#cfc4ff;background:#1c1630;padding:5px 8px;border-radius:7px;margin-bottom:13px}.card h3{font:700 21px "Space Grotesk";margin-bottom:8px}.card p{color:var(--muted);font-size:14px}.meta{display:flex;justify-content:space-between;margin-top:17px;color:#777786;font-size:12px}.fire{color:#fb7185}
+.feature{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.featureMain{min-height:300px;background:linear-gradient(135deg,#171126,#10151c 55%,#10282c);display:flex;flex-direction:column;justify-content:end}.featureMain h3{font-size:32px;max-width:650px}.featureMain p{max-width:650px}.featureSide{display:grid;gap:16px}
+.filters{display:flex;gap:8px;overflow:auto;padding-bottom:5px;margin-bottom:20px}.filter{white-space:nowrap;border:1px solid var(--line);background:#0e0e15;color:#aaaabc;border-radius:999px;padding:9px 13px;cursor:pointer}.filter.active,.filter:hover{color:white;border-color:#5d4a8d;background:#1a1530}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.tool{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:18px}.icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#1b1830;margin-bottom:13px;font-size:20px}.tool h3{font-size:15px}.tool p{font-size:12px;color:var(--muted);margin-top:4px}
+.search{display:flex;gap:10px;margin:18px 0}.search input{flex:1;background:#0d0d14;border:1px solid var(--line);color:white;border-radius:12px;padding:13px 15px;outline:none}.search input:focus{border-color:#6550a0}
+.newsletter{padding:32px;border-radius:23px;border:1px solid #302850;background:linear-gradient(135deg,#151025,#0e171b);display:flex;justify-content:space-between;align-items:center;gap:20px}.newsletter h2{font:700 27px "Space Grotesk"}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#777786;font-size:13px}.footerin{display:flex;justify-content:space-between;gap:20px}
+.toast{position:fixed;right:20px;bottom:20px;background:#171720;border:1px solid #383847;padding:12px 15px;border-radius:12px;transform:translateY(120px);transition:.25s;z-index:50}.toast.show{transform:translateY(0)}
+@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:60px}.grid{grid-template-columns:1fr 1fr}.feature{grid-template-columns:1fr}.tools{grid-template-columns:1fr 1fr}.newsletter{flex-direction:column;align-items:flex-start}}
+@media(max-width:550px){h1{font-size:50px;letter-spacing:-2px}.grid,.tools{grid-template-columns:1fr}.heroCard{display:none}.sectionHead{display:block}.sectionHead .muted{margin-top:7px}.footerin{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container navin">
+<a class="logo" href="#">Trend<span>Forge</span> ⚡</a>
+<div class="links"><a href="#trending">Trending</a><a href="#discover">Discover</a><a href="#tools">Tools</a><a href="#community">Community</a></div>
+<div class="actions"><button class="btn" id="themeBtn">◐</button><button class="btn primary" onclick="scrollToId('discover')">Explore</button></div>
+</div></nav>
+
+<main>
+<section class="hero container">
+<div>
+<div class="badge"><span class="dot"></span> LIVE TREND RADAR · UPDATED DAILY</div>
+<h1>The internet's <span class="grad">next big thing</span> starts here.</h1>
+<p>Discover what's exploding across AI, gaming, tech, creators, apps and culture — all in one fast, futuristic dashboard.</p>
+<div class="heroBtns"><button class="btn primary" onclick="scrollToId('trending')">See what's hot →</button><button class="btn" onclick="randomTrend()">Surprise me ✨</button></div>
+</div>
+<div class="heroCard">
+<div class="miniTop"><span>GLOBAL TREND INDEX</span><span>● LIVE</span></div>
+<div class="score">87.4</div><div class="trend">↑ 12.8% this week</div>
+<div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="miniTop"><span>7-day momentum</span><span>AI · GAMING · CREATOR</span></div>
+</div>
+</section>
+
+<section class="section container" id="trending">
+<div class="sectionHead"><div><div class="eyebrow">01 · Right now</div><h2>Trending today</h2></div><div class="muted">Fresh ideas worth watching</div></div>
+<div class="grid" id="trendGrid">
+<article class="card trendCard" data-cat="AI"><span class="tag">AI</span><h3>Personal AI agents</h3><p>AI that can plan multi-step tasks instead of only answering one prompt at a time.</p><div class="meta"><span>Momentum</span><span class="fire">🔥 98</span></div></article>
+<article class="card trendCard" data-cat="Gaming"><span class="tag">GAMING</span><h3>UGC game worlds</h3><p>Players are becoming builders, creators and even economy designers inside games.</p><div class="meta"><span>Momentum</span><span class="fire">🔥 94</span></div></article>
+<article class="card trendCard" data-cat="Creators"><span class="tag">CREATORS</span><h3>Micro-content series</h3><p>Short episodes with recurring characters are turning scrolling into a daily habit.</p><div class="meta"><span>Momentum</span><span class="fire">🔥 92</span></div></article>
+<article class="card trendCard" data-cat="Tech"><span class="tag">TECH</span><h3>AI-native devices</h3><p>Hardware is being redesigned around on-device assistants and smarter workflows.</p><div class="meta"><span>Momentum</span><span class="fire">🔥 89</span></div></article>
+<article class="card trendCard" data-cat="Apps"><span class="tag">APPS</span><h3>One-screen dashboards</h3><p>People want a single place to see messages, tasks, media and important updates.</p><div class="meta"><span>Momentum</span><span class="fire">🔥 86</span></div></article>
+<article class="card trendCard" data-cat="Culture"><span class="tag">CULTURE</span><h3>Digital nostalgia</h3><p>Retro web aesthetics are coming back with modern interfaces and interactive design.</p><div class="meta"><span>Momentum</span><span class="fire">🔥 83</span></div></article>
+</div>
+</section>
+
+<section class="section container" id="discover">
+<div class="sectionHead"><div><div class="eyebrow">02 · Explore</div><h2>Find your rabbit hole</h2></div></div>
+<div class="filters">
+<button class="filter active" data-filter="All">All</button><button class="filter" data-filter="AI">AI</button><button class="filter" data-filter="Gaming">Gaming</button><button class="filter" data-filter="Creators">Creators</button><button class="filter" data-filter="Tech">Tech</button><button class="filter" data-filter="Apps">Apps</button><button class="filter" data-filter="Culture">Culture</button>
+</div>
+<div class="feature">
+<article class="card featureMain"><span class="tag">DEEP DIVE · AI</span><h3>Why AI agents are becoming the new interface</h3><p>From search to software, the next wave is about giving systems goals, context and permission to complete useful work.</p><div class="meta"><span>8 min read</span><span>Updated today</span></div></article>
+<div class="featureSide">
+<article class="card"><span class="tag">GAMING</span><h3>Games are becoming platforms</h3><p>World-building, UGC and social play are blurring the line between game and community.</p></article>
+<article class="card"><span class="tag">CREATOR</span><h3>The new creator stack</h3><p>Editing, thumbnails, analytics, scripting and publishing are becoming one workflow.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section container" id="tools">
+<div class="sectionHead"><div><div class="eyebrow">03 · Toolbox</div><h2>Useful stuff</h2></div><div class="muted">Small tools. Big convenience.</div></div>
+<div class="search"><input id="toolSearch" placeholder="Search tools..."><button class="btn primary" onclick="clearSearch()">Clear</button></div>
+<div class="tools" id="toolGrid">
+<div class="tool" data-name="trend calculator"><div class="icon">📈</div><h3>Trend Calculator</h3><p>Turn views and growth into a simple momentum score.</p></div>
+<div class="tool" data-name="idea generator"><div class="icon">💡</div><h3>Idea Generator</h3><p>Generate a random project, video or startup concept.</p></div>
+<div class="tool" data-name="name generator"><div class="icon">✨</div><h3>Name Forge</h3><p>Make punchy names for channels, projects and brands.</p></div>
+<div class="tool" data-name="focus timer"><div class="icon">⏱️</div><h3>Focus Timer</h3><p>A simple distraction-free 25-minute sprint.</p></div>
+<div class="tool" data-name="poll maker"><div class="icon">🗳️</div><h3>Poll Maker</h3><p>Ask your audience a question and reveal the result.</p></div>
+<div class="tool" data-name="color palette"><div class="icon">🎨</div><h3>Palette Lab</h3><p>Generate a fresh visual direction for your next project.</p></div>
+<div class="tool" data-name="headline lab"><div class="icon">🧲</div><h3>Headline Lab</h3><p>Turn a plain idea into several attention-grabbing headlines.</p></div>
+<div class="tool" data-name="random trend"><div class="icon">🎲</div><h3>Random Trend</h3><p>Jump somewhere unexpected and discover a new topic.</p></div>
+</div>
+</section>
+
+<section class="section container" id="community">
+<div class="newsletter">
+<div><div class="eyebrow">04 · Stay ahead</div><h2>Get the weekly trend drop.</h2><p class="muted">A quick roundup of ideas, tools and internet shifts.</p></div>
+<button class="btn primary" onclick="subscribe()">Join the list →</button>
+</div>
+</section>
+</main>
+
+<footer><div class="container footerin"><div>© 2026 TrendForge. Built for the curious.</div><div>AI · Gaming · Tech · Creators · Culture</div></div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const toastEl=document.getElementById('toast');
+function toast(msg){toastEl.textContent=msg;toastEl.classList.add('show');setTimeout(()=>toastEl.classList.remove('show'),2200)}
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function randomTrend(){const cards=[...document.querySelectorAll('.trendCard')];const c=cards[Math.floor(Math.random()*cards.length)];c.scrollIntoView({behavior:'smooth',block:'center'});c.style.borderColor='#8b5cf6';setTimeout(()=>c.style.borderColor='',1500);toast('You found: '+c.querySelector('h3').textContent)}
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+const f=btn.dataset.filter;document.querySelectorAll('.trendCard').forEach(c=>c.style.display=(f==='All'||c.dataset.cat===f)?'block':'none');
+}));
+document.getElementById('toolSearch').addEventListener('input',e=>{
+const q=e.target.value.toLowerCase();document.querySelectorAll('.tool').forEach(t=>t.style.display=t.dataset.name.includes(q)?'block':'none');
+});
+function clearSearch(){document.getElementById('toolSearch').value='';document.querySelectorAll('.tool').forEach(t=>t.style.display='block')}
+function subscribe(){toast('You’re on the list 🚀 (demo)')}
+document.getElementById('themeBtn').addEventListener('click',()=>{document.body.classList.toggle('light');toast('Theme toggle is ready for customization')})
+</script>
+</body>
+</html>
